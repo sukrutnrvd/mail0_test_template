@@ -17,7 +17,7 @@ RUN set -eux; \
   cat > /docker-entrypoint.sh <<'EOS' \
   && chmod +x /docker-entrypoint.sh
 #!/usr/bin/env sh
-set -euo pipefail
+set -eu
 
 # -------- Varsayılanlar (env verilmezse bunlar kullanılır)
 : "${VITE_PUBLIC_APP_URL:=http://localhost:3000}"
