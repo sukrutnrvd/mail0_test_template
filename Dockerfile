@@ -23,12 +23,11 @@ RUN echo "ALLOWED_HOSTS=$ALLOWED_HOSTS" >> .env.dist
 RUN echo "CSRF_TRUSTED_ORIGINS=$CSRF_TRUSTED_ORIGINS" >> .env.dist
 RUN echo "TIME_ZONE=$TIME_ZONE" >> .env.dist
 
+RUN pip install -r requirements.txt
 
 RUN chmod +x /horilla/entrypoint.sh && sed -i 's/\r$//' /horilla/entrypoint.sh
 
 RUN /horilla/entrypoint.sh
-
-RUN pip install -r requirements.txt
 
 EXPOSE 8000
 
