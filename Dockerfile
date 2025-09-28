@@ -27,9 +27,7 @@ RUN pip install -r requirements.txt
 
 RUN chmod +x /horilla/entrypoint.sh && sed -i 's/\r$//' /horilla/entrypoint.sh
 
-RUN /horilla/entrypoint.sh
-
 EXPOSE 8000
 
-
+ENTRYPOINT ["/horilla/entrypoint.sh"]
 CMD ["python3", "manage.py", "runserver"]
